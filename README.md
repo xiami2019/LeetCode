@@ -1,2 +1,3 @@
 # LeetCode
-Programming practice in LeetCode
+
+近期刷题记录
