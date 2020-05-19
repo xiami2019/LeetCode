@@ -1,3 +1,4 @@
+// 贪心算法
 class Solution {
 public:
     bool checkPalindrome(const string &s, int low, int high) {

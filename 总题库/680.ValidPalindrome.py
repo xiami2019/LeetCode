@@ -1,3 +1,4 @@
+# 贪心算法
 class Solution:
     def checkPalindrome(self, s: str, low: int, high: int) -> bool:
         i = low
