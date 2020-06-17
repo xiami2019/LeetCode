@@ -42,7 +42,7 @@ public:
             int start = q.front();
             q.pop();
             if (memo[start] == 0) {
-                for (int end = start + 1; end < s.length(); ++end) {
+                for (int end = start + 1; end < s.length() + 1; ++end) {
                     if (words.count(s.substr(start, end - start))) {
                         q.push(end);
                         if (end == s.length()) return true;
@@ -59,6 +59,20 @@ public:
 class Solution {
 public:
     bool wordBreak(string s, vector<string>& wordDict) {
-        
+        unordered_set<string> words;
+        vector<bool> dp(s.length() + 1, false); // DP数组表示从0开始的第i个字符所组成的字符串是否满足条件
+        dp[0] = true;
+        for (string s : wordDict) {
+            words.insert(s);
+        }
+        for (int i = 1; i < s.length() + 1; ++i) {
+            for (int j = 0; j < i; ++j) {
+                if (dp[j] && words.count(s.substr(j, i - j + 1))) {
+                    dp[i] = true;
+                    break;
+                }
+            }
+        }
+        return dp[s.length()];
     }
-}
+};
