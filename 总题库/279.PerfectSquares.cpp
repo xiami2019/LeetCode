@@ -53,7 +53,6 @@ public:
                 }
             }
             q = nextQueue;
-            nextQueue.clear();
         }
 
         return level;
@@ -61,3 +60,4 @@ public:
 };
 
 // 换一种层序遍历方法再试一遍
+// class So
